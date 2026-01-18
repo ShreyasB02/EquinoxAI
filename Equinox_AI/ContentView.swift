@@ -38,6 +38,8 @@ struct ChatView: View {
     @State private var response = "Ask EquinoxAI something…"
     @State private var isThinking = false
 
+    
+    @State private var voiceManager=VoiceManager()
     @State private var modelSession = LanguageModelSession()
 
     var body: some View {
@@ -52,10 +54,42 @@ struct ChatView: View {
             .background(Color(.secondarySystemBackground))
             .cornerRadius(10)
 
-            TextField("Ask EquinoxAI...", text: $prompt)
-                .textFieldStyle(.roundedBorder)
-                .disabled(isThinking)
-
+            HStack {
+                TextField("Ask EquinoxAI...", text: $prompt)
+                    .textFieldStyle(.roundedBorder)
+                    .disabled(isThinking || voiceManager.isRecording)
+                
+                // 2. The Microphone Button
+                Button(action: {
+                    do {
+                        if voiceManager.isRecording {
+                            try voiceManager.stopRecording()
+                            // Automatically transfer speech to the prompt box
+                            prompt = voiceManager.recognizedText
+                        } else {
+                            try voiceManager.startRecording()
+                        }
+                    } catch {
+                        // Surface recording errors to the UI
+                        response = "Audio error: \(error.localizedDescription)"
+                    }
+                }) {
+                    Image(systemName: voiceManager.isRecording ? "stop.circle.fill" : "mic.circle.fill")
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(voiceManager.isRecording ? .red : .blue)
+                }
+            }
+            .padding(.horizontal)
+            
+            // 3. Live Speech Preview (Optional but helpful)
+            if voiceManager.isRecording {
+                Text("Hearing: \(voiceManager.recognizedText)")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+            }
+            
+            
             Button("Generate") {
                 Task {
                     await generateResponse()
@@ -81,3 +115,4 @@ struct ChatView: View {
         isThinking = false
     }
 }
+
