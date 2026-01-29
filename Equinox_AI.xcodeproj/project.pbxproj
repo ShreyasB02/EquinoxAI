@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2DF6FAD92F1DD5CC00FC2CE5 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF6FAD82F1DD5CC00FC2CE5 /* EventManager.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		2DF6FAA62F18C29600FC2CE5 /* Equinox_AI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Equinox_AI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DF6FAD82F1DD5CC00FC2CE5 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		2DF6FA9D2F18C29600FC2CE5 = {
 			isa = PBXGroup;
 			children = (
+				2DF6FAD82F1DD5CC00FC2CE5 /* EventManager.swift */,
 				2DF6FAA82F18C29600FC2CE5 /* Equinox_AI */,
 				2DF6FAA72F18C29600FC2CE5 /* Products */,
 			);
@@ -119,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DF6FAD92F1DD5CC00FC2CE5 /* EventManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,8 +260,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Equinox_AI needs your voice to hear your requests";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Equinox_AI converts your speech to text for processing";
+				INFOPLIST_KEY_NSCalendarsFullAccessUsageDescription = "EquinoxAI needs access to schedule based on your availability.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "EquinoxAI needs the camera to see the world around you.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "EquinoxAI needs your voice to hear your requests";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "EquinoxAI needs access to your photos to analyze them.";
+				INFOPLIST_KEY_NSRemindersFullAccessUsageDescription = "EquinoxAI needs access to manage your to-do list.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "EquinoxAI converts your speech to text for processing";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -286,8 +297,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Equinox_AI needs your voice to hear your requests";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Equinox_AI converts your speech to text for processing";
+				INFOPLIST_KEY_NSCalendarsFullAccessUsageDescription = "EquinoxAI needs access to schedule based on your availability.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "EquinoxAI needs the camera to see the world around you.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "EquinoxAI needs your voice to hear your requests";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "EquinoxAI needs access to your photos to analyze them.";
+				INFOPLIST_KEY_NSRemindersFullAccessUsageDescription = "EquinoxAI needs access to manage your to-do list.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "EquinoxAI converts your speech to text for processing";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
